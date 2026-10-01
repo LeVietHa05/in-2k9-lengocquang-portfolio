@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-iosevka-charon), monospace;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(*) {
+    animation-duration: 400ms;
+    animation-timing-function: ease-out;
+  }
+}

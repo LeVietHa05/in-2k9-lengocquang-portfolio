@@ -10,10 +10,10 @@ export default function Home() {
         alt=""
         width={823}
         height={634}
-        className="absolute right-10 top-1/2 left-1/2 z-10 h-auto w-[520px] -translate-1/2 opacity-80"
+        className="absolute right-10 top-1/2 left-1/2 z-10 h-auto w-[520px] -translate-1/2  "
       />
 
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center font-[family-name:var(--font-spider)] text-[200px] text-[#FFF15D] uppercase text-shadow-[2px_2px_1px_rgba(0,0,0)]">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center font-[family-name:var(--font-spider)] text-[200px] text-[#FFF15D] uppercase [-webkit-text-stroke:3px_#000]">
         <span>LE NGOC QUANG</span>
         <span>P@RTF€RLIO</span>
       </div>
