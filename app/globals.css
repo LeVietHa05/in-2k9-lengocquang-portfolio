@@ -25,9 +25,24 @@ body {
   font-family: var(--font-iosevka-charon), monospace;
 }
 
+@keyframes tab-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   ::view-transition-group(*) {
     animation-duration: 400ms;
     animation-timing-function: ease-out;
+  }
+
+  .animate-tab-fade {
+    animation: tab-fade 350ms ease-out;
   }
 }
