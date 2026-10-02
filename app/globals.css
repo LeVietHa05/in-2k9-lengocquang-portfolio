@@ -45,4 +45,31 @@ body {
   .animate-tab-fade {
     animation: tab-fade 350ms ease-out;
   }
+
+  /* Navbar: the underline morphs position/size between nav items. The label
+     colors crossfade on their own, so suppress their shared fade. */
+  /* Only the navbar animates on a nav-indicator transition. The page behind it
+     must not crossfade, or a route change fights the running transition. */
+  html:active-view-transition-type(nav-indicator)::view-transition-group(root) {
+    animation: none;
+  }
+
+  html:active-view-transition-type(nav-indicator)::view-transition-old(root),
+  html:active-view-transition-type(nav-indicator)::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-group(nav-underline) {
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+  }
+
+  ::view-transition-old(nav-underline),
+  ::view-transition-new(nav-underline) {
+    animation: none;
+    mix-blend-mode: normal;
+    height: 100%;
+  }
 }
