@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { CSSProperties } from "react";
 import { flushSync } from "react-dom";
 import { activities } from "./data";
+import { Carousel } from "./Carousel";
 
 type ThumbProps = {
   src: string;
@@ -139,13 +140,11 @@ export default function Activities() {
 
             <div className="border-1 border-black border-solid w-full mt-15" />
 
-            {active.image && (
-              <Image
-                src={active.image}
+            {active.folder && active.images && (
+              <Carousel
+                folder={active.folder}
+                images={active.images}
                 alt={active.title}
-                width={1117}
-                height={744}
-                className="h-auto w-full border-[3px] border-[#02186F]"
               />
             )}
           </>
